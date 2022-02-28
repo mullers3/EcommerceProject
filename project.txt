@@ -1,0 +1,9 @@
+For my project I want to create an ecommerce hair dye store. I'm going to have a home page that will direct you to either
+the register or login page. I'm going to break the dyes into sections and each section will have their own page and then a
+checkout page. 
+
+Entity: 
+user 
+product 
+order 
+??

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <header>
+        <h1>Register Page</h1>
+    </header>
+    <main>
+       
+        <form action="to-my-server" method="POST">
+        <section class="container">
+            <div class="row">
+                <div class="column">
+                     <div class="formInp">
+                         <label for="fname">First Name</label>
+                        <br>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                </div> 
+                <div class="column"> 
+                    <div class="formInp">
+                        <label for="lname">Last Name</label>
+                        <br>
+                        <input type="text" id="lname" name="lname">
+                    </div>
+                 </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="colmn">
+                    <div class="formInp">
+                        <label for="user">Username or Email</label>
+                        <br>
+                        <!--I wasn't sure which type to make this becasue email would be type email but 
+                            username would be type text so I just went with text-->
+                        <input type="text" id="user" name="user">
+                    </div>
+                </div>    
+                <div class="column">
+                    <div class="formInp">
+                        <label for="pass">Password</label>
+                        <br>
+                        <input type="password" id="pass" name="pass">
+                    </div>
+                </div>
+            </div>    
+            <br>
+            <div class="formInp">
+                <label for="bday">Birthday</label>
+                <br>
+                <input type="date" name="bday" id="bday">
+            </div>
+            <br>
+            <input type="submit" value="SUBMIT">
+        </section>    
+        </form>
+    </main>
+
+    <footer>
+        <hr class="footerHR">
+        <h5>Paid For By Kira&copy; We Love Them </h5>
+    </footer>
+</body>
+</html>
