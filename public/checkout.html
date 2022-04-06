@@ -4,80 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/styles/checkout.css">
 </head>
 <body>
-    <main>
-        <form action="to-my-server" method="POST">
-            <section class="container">
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="fname">First Name</label>
-                            <br>
-                            <input type="text" id="fname" name="fname">
-                        </div>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="lname">Last Name</label>
-                            <br>
-                            <input type="text" id="lname" name="lname">
-                        </div>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="cnumber">Credit Card Number</label>
-                            <br>
-                            <input type="text" id="cnumber" name="cnumber">
-                        </div>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="cvv">CVV Code</label>
-                            <br>
-                            <input type="text" id="cvv" name="cvv">
-                        </div>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="baddress">Billing Address</label>
-                            <br>
-                            <input type="text" id="fname" name="fname">
-                        </div>
-                    </div> 
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="saddress">Shipping Address</label>
-                            <br>
-                            <input type="text" id="saddress" name="saddress">
-                        </div>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="column">
-                         <div class="payment-frm">
-                             <label for="zip">Zip Code</label>
-                            <br>
-                            <input type="text" id="zip" name="zip">
-                        </div>
-                    </div> 
-                </div>
-                
+    <header>
+        <h1>Checkout Page</h1>
+    </header>
 
+    <nav>
+        <ul>
+            <li><a href="/public/home.html">Home</a> </li>
+            <li><a href="/public/login.html">Login</a> </li>
+            <li><a href="/public/register.html">Register</a> </li>
+            <li><a class="active" href="/public/checkout.html">Checkout</a> </li>
+            <li class="dropdown"><a href="#products">Products</a> 
+                <ul class="products">
+                    <li><a href="/public/warm.html">Warm Tones</a> </li>   
+                    <li><a href="/public/cool.html">Cool Tones</a> </li> 
+                    <li><a href="/public/gray.html">Gray Tones</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="cart">
+            <h3>This is where the cart will show up when the Cart is actually implemented</h3>
+            <img src="/public/images/cart.webp" alt="Shopping Cart">
+        </div>
+        <form action="to-my-server" method="POST">
+            <h3>Payment  Information</h3>
+        <section class="container">
+            <div class="row">
+                <div class="column">
+                     <div class="payment-frm">
+                         <label for="fname">First Name</label>
+                        <br>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                </div> 
+                <div class="column"> 
+                    <div class="payment-frm">
+                        <label for="lname">Last Name</label>
+                        <br>
+                        <input type="text" id="lname" name="lname">
+                    </div>
+                 </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="colmn">
+                    <div class="payment-frm">
+                        <label for="cnumber">Credit Card Number</label>
+                        <br>
+                        <input type="text" id="cnumber" name="cnumber">
+                    </div>
+                </div>    
+                <div class="column">
+                    <div class="payment-frm">
+                        <label for="cvv">CVV Code</label>
+                        <br>
+                        <input type="text" id="cvv" name="cvv">
+                    </div>
+                </div>
+            </div>    
+            <br>
+            <h3>Shipping Information</h3>
+            <br>
+            <div class="row">
+                <div class="colmn">
+                    <div class="payment-frm">
+                        <label for="baddress">Billing Address</label>
+                        <br>
+                        <input type="text" id="baddress" name="baddress">
+                    </div>
+                </div>    
+                <div class="column">
+                    <div class="payment-frm">
+                        <label for="saddress">Shipping Adress</label>
+                        <br>
+                        <input type="text" id="saddress" name="saddress">
+                    </div>
+                </div>
+            </div> 
+            <div class="payment-frm">
+                <label for="zip">Shipping Zip Code</label>
+                <br>
+                <input type="text" name="zip" id="zip">
+            </div>
+           
+            <br>
+            <input type="submit" value="CHECKOUT">
+        </section>    
+        </form>
+        </section>
     </main>
-    
+
+    <footer id="footer">
+        <hr class="footerHR">
+        <h5>TotallyRealWebsite &copy; </h5>
+    </footer>
 </body>
 </html>

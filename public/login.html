@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="/styles/login.css">
 </head>
 <body>
     <header>
         <h1>Login</h1>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="/public/home.html">Home</a> </li>
+            <li><a class="active" href="/public/login.html">Login</a> </li>
+            <li><a href="/public/register.html">Register</a> </li>
+            <li><a href="/public/checkout.html">Checkout</a> </li>
+            <li class="dropdown"><a href="#products">Products</a> 
+                <ul class="products">
+                    <li><a href="/public/warm.html">Warm Tones</a> </li>   
+                    <li><a href="/public/cool.html">Cool Tones</a> </li> 
+                    <li><a href="/public/gray.html">Gray Tones</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
     <main>
         <form action="#to-my-server" method="POST">
             <div class="row">
@@ -33,7 +50,7 @@
             <input type="submit" value="SUBMIT">
         </form>
     </main>
-    <footer>
+    <footer id="footer">
         <hr class="footerHR">
         <h5>TotallyRealWebsite &copy; </h5>
     </footer>

@@ -3,12 +3,58 @@
         color: white;
         padding: 2%;
         text-align: center;
-        background-image: url("../images/BG2.jpg");
+        background-image: url("/public/images/BG2.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         letter-spacing: .1em;
         font-weight: 200;
     }
+
+/*Nav*/ 
+nav ul {
+    text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(69, 34, 74);
+    padding: .5em;
+}
+
+nav ul li a:hover, .active{
+    background-color: rgb(136, 74, 149);
+    color: white;
+    border-radius: 30%;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: .5em;
+}
+
+nav ul li ul li{
+    background-color: white;
+
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown:hover .products{
+    display: block;
+}
+
+.products{
+    display: none;
+    position: absolute;
+    padding-left: 0;
+}
+
+.products li{
+    width: max-content;
+}
+
 
 /*Body*/
     body{
@@ -17,11 +63,15 @@
         letter-spacing: 2px;
     }
 
+    main{
+        padding-bottom: 10em;
+    }
+
 /*Form formatting including the flex stuff*/
 
 form{
     width: max-content;
-    box-shadow: 0 0 .2em rgb(102, 51, 153);
+    box-shadow: 0 0 .2em rgb(136, 74, 149);
     margin: auto;
     padding: 4%;
     text-align: center;
@@ -33,7 +83,7 @@ input{
 
 input[type="submit"]{
     color: whitesmoke;
-    background-color: rgb(102, 51, 153);
+    background-color: rgb(136, 74, 149);
     border-radius: .4em;
     padding: .2em;
     margin-top: 1.2em;
@@ -65,12 +115,15 @@ input[type="submit"]{
   }
 
 /*Footer*/  
-    footer h5{
-        color: rgb(102, 51, 153);
-        font-family: 'Courier New', Courier, monospace;
-    }
-
-    .footerHR{
-        margin-top: 3em;
-        border-top: 1px solid rgb(102, 51, 153);
-    }
+#footer{
+    position: relative;
+    margin-top: -4em;
+    height: 4em;
+    width: 100%;
+    color: rgb(69, 34, 74);
+  }
+  
+  .footerHR{
+       border: 1px solid rgb(136, 74, 149);
+       width: 100%;
+   }

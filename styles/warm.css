@@ -1,43 +1,4 @@
-#container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.warm-product img{
-    width: 20em;
-    height: 20em;
-    width: 20em;
-    margin-bottom: 5em;
-}
-
-.warm-product{
-    text-align: center;
-    box-shadow: 0px 0px 15px 4px darkred;
-    width: 20em;
-    margin-bottom: 5em;
-    margin-left: 2.5em;
-}
-
-html{
-    background-image: linear-gradient(to bottom right, rgb(239,65,51), rgb(254,194,60));
-    min-height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#footer{
-    position: relative;
-    margin-top: -4em;
-    height: 4em;
-    width: 100%;
-    color:antiquewhite ;
-}
-
-.footerHR{
-    border: 1px solid rgb(239,65,51);
-}
-
+/*Header*/
 header h1, h3{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: antiquewhite;
@@ -53,12 +14,93 @@ header h1{
 
 
 header{
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+}
+
+/*Nav*/
+nav ul {
+    text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: antiquewhite;
+    padding: .5em;
+}
+
+nav ul li a:hover, .active{
+    background-color: rgb(254,194,60);
+    color: darkred;
+    border-radius: 30%;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: .5em;
+}
+
+nav ul li ul li{
+    background-color: rgb(245, 118, 55);
+
+}
+
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown:hover .products{
+    display: block;
+}
+
+.products{
+    display: none;
+    position: absolute;
+    padding-left: 0;
+}
+
+.products li{
+    width: max-content;
+}
+
+/*Body*/
+html{
+    background-image: linear-gradient(to right, rgb(239,65,51), rgb(254,194,60));
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    padding-bottom: 2em;
+}
+
+/*Flex-Formatting*/
+#container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.warm-product img{
+    width: 20em;
+    height: 20em;
+}
+
+.warm-product{
+    text-align: center;
+    box-shadow: 0px 0px 15px 4px darkred;
+    width: 20em;
+    margin-bottom: 5em;
+    margin-left: 2.5em;
 }
 
 section{
-    margin: 6em 6em;
+    margin: 6em 9em 6em 6em;
+    font-family: monospace;
+    font-size: large;
 }
+
 
 input[type="submit"]{
     background-color: antiquewhite;
@@ -68,4 +110,18 @@ input[type="submit"]{
     padding: .4em;
     width: 33%;
     font-weight: bold;
+}
+
+/*Footer*/
+
+#footer{
+    position: relative;
+    margin-top: -4em;
+    height: 4em;
+    width: 100%;
+    color:antiquewhite ;
+}
+
+.footerHR{
+    border: 1px solid rgb(239,65,51);
 }

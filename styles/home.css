@@ -1,3 +1,4 @@
+/*Header*/
 header h1{
     color: white;
     padding: 2%;
@@ -10,7 +11,6 @@ header h1{
 }
 
 /*Nav*/
-
 nav ul {
     text-align: center;
 }
@@ -37,6 +37,7 @@ nav ul li ul li{
 
 }
 
+
 .dropdown{
     position: relative;
 }
@@ -55,55 +56,50 @@ nav ul li ul li{
     width: max-content;
 }
 
+
 /*Body*/
 body{
-    background-color: rgba(228, 228, 250, .5) ;
+    background-color: rgba(228, 228, 250, .3) ;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 2px;
 }
 
-form{
-    width: max-content;
-    box-shadow: 0 0 .2em rgb(136, 74, 149);
-    margin: auto;
-    padding: 4%;
+h3, p, h2{
+    color: rgb(136, 74, 149);
     text-align: center;
 }
 
-form input{
+p{
+    width: 50%;
+    display: block;
     margin: auto;
 }
 
-input[type="submit"]{
-    color: whitesmoke;
-    background-color: rgb(136, 74, 149);
-    border-radius: .4em;
-    padding: .2em;
-    margin-top: 1.2em;
-    margin-left: auto;
+#space{
+    margin-bottom: 3em;
 }
 
-.formInp{
-    padding: .7em;
+img{
+    display: block;
     margin: auto;
+    height: 30em;
 }
 
 main{
-    padding-bottom: 23em;
+    padding-bottom: 6em;
 }
 
+/*Footer*/
 
-/*Footer*/  
 #footer{
-    position: relative;
-    margin-top: -4em;
-    height: 4em;
-    width: 100%;
-    color: rgb(69, 34, 74);
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .footerHR{
-       border: 1px solid rgb(136, 74, 149);
-       width: 100%;
-   }
+  position: relative;
+  margin-top: -4em;
+  height: 4em;
+  width: 100%;
+  color: rgb(69, 34, 74);
+}
+
+.footerHR{
+     border: 1px solid rgb(136, 74, 149);
+     width: 100%;
+ }

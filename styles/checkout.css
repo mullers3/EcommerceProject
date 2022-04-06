@@ -1,3 +1,4 @@
+/*Header*/
 header h1{
     color: white;
     padding: 2%;
@@ -10,7 +11,6 @@ header h1{
 }
 
 /*Nav*/
-
 nav ul {
     text-align: center;
 }
@@ -34,7 +34,6 @@ nav ul li{
 
 nav ul li ul li{
     background-color: white;
-
 }
 
 .dropdown{
@@ -55,41 +54,75 @@ nav ul li ul li{
     width: max-content;
 }
 
+
 /*Body*/
 body{
-    background-color: rgba(228, 228, 250, .5) ;
+    background-color: rgba(228, 228, 250,.2) ;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 2px;
 }
 
-form{
-    width: max-content;
-    box-shadow: 0 0 .2em rgb(136, 74, 149);
-    margin: auto;
-    padding: 4%;
-    text-align: center;
+main{
+    padding-bottom: 6em;
 }
 
-form input{
-    margin: auto;
+/*Form formatting including the flex stuff*/
+
+form{
+width: max-content;
+box-shadow: 0 0 .2em rgb(102, 51, 153);
+margin: auto;
+padding: 4%;
+text-align: center;
+}
+
+input{
+margin: 10px 0;
 }
 
 input[type="submit"]{
-    color: whitesmoke;
-    background-color: rgb(136, 74, 149);
-    border-radius: .4em;
-    padding: .2em;
-    margin-top: 1.2em;
-    margin-left: auto;
+color: whitesmoke;
+background-color: rgb(102, 51, 153);
+border-radius: .4em;
+padding: .2em;
+margin-top: 1.2em;
+margin-left: auto;
 }
 
-.formInp{
-    padding: .7em;
+.payment-frm{
+padding: .7em;
+margin: auto;
+}
+
+.container {
+margin: 15px;
+}
+
+.row {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 100%;
+justify-content: space-between;
+}
+
+.column {
+display: flex;
+flex-direction: column;
+flex-basis: 100%;
+flex: 1;
+}
+
+/*Cart*/
+
+#cart img{
+    display: block;
     margin: auto;
 }
 
-main{
-    padding-bottom: 23em;
+#cart{
+    margin-bottom: 2em;
+    text-align: center;
 }
 
 
@@ -99,11 +132,10 @@ main{
     margin-top: -4em;
     height: 4em;
     width: 100%;
-    color: rgb(69, 34, 74);
+    color: rgb(102, 51, 153);
     font-family: 'Courier New', Courier, monospace;
   }
   
-  .footerHR{
-       border: 1px solid rgb(136, 74, 149);
-       width: 100%;
-   }
+.footerHR{
+    border-top: 1px solid rgb(102, 51, 153);
+}
