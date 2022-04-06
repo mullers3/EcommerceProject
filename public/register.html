@@ -29,7 +29,7 @@
     </nav>
 
     <main>
-        <form action="to-my-server" method="POST">
+        <form id="regForm">
         <section class="container">
             <div class="row">
                 <div class="column">
@@ -51,11 +51,11 @@
             <div class="row">
                 <div class="colmn">
                     <div class="formInp">
-                        <label for="user">Username or Email</label>
+                        <label for="user">Email</label>
                         <br>
                         <!--I wasn't sure which type to make this becasue email would be type email but 
                             username would be type text so I just went with text-->
-                        <input type="text" id="user" name="user">
+                        <input type="email" id="email" name="email">
                     </div>
                 </div>    
                 <div class="column">
@@ -84,5 +84,6 @@
         <h5>TotallyRealWebsite &copy; </h5>
         </div>
     </footer>
+    <script src="/main.js"></script>
 </body>
 </html>
