@@ -1,3 +1,3 @@
 # Project
 
-Current porject for Web Development class.
+Current project for Web Development class.
