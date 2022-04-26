@@ -52,6 +52,115 @@ class Customer{
 
 }
 
+class Product{// does it need a pic variable
+    constructor(id, pName, pPrice){
+        this.productId = id;
+        this.productName = pName;
+        this.productPrice = pPrice;
+    }
+
+    getProductName(){
+    return this.productName;    
+    }
+
+    getProductPrice(){
+        return this.productPrice;
+    }
+
+    setProductName(pName){
+        this.productName = pName;
+    }
+
+    setProductPrice(pPrice){
+        this.productPrice = pPrice;
+    }
+}
+
+class Cart{
+    constructor(id){
+        this.cartId = id;
+    }
+}
+
+export async function fetchData(url = '', data = {}, methodType) {
+    const response = await fetch(`http://localhost:3000${url}`, {
+      method: methodType, // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    if(response.ok) {
+      return await response.json(); // parses JSON response into native JavaScript objects
+    } else {
+      throw await response.json();
+    }
+  }
+
+export function setCurrentCustomer(customer){
+    localStorage.setItem('customer', JSON.stringify(customer));
+}
+
+export function getCurrentCustomer(){
+    return JSON.parse(localStorage.getItem('customer'));
+}
+
+export function removeCurrentCustomer(){
+    localStorage.removeItem('customer');
+}
+
+const nav = document.querySelector('nav');
+if(getCurrentCustomer()){
+    nav.innerHTML =`
+    <ul>
+    <li><a href="/public/home.html">Home</a> </li>
+    <li><a id="logout">Logout</a> </li>
+    <li><a href="/public/register.html">Register</a> </li>
+    <li><a href="/public/checkout.html">Checkout</a> </li>
+    <li class="dropdown"><a href="#products">Products</a> 
+        <ul class="products">
+            <li><a href="/public/warm.html">Warm Tones</a> </li>   
+            <li><a href="/public/cool.html">Cool Tones</a> </li> 
+            <li><a href="/public/gray.html">Gray Tones</a> </li>
+        </ul>
+    </li>
+</ul>
+    `
+}else{
+    nav.innerHTML = `
+    <ul>
+    <li><a href="/public/home.html">Home</a> </li>
+    <li><a href="/public/login.html">Login</a> </li>
+    <li><a href="/public/register.html">Register</a> </li>
+    <li><a href="/public/checkout.html">Checkout</a> </li>
+    <li class="dropdown"><a href="#products">Products</a> 
+        <ul class="products">
+            <li><a href="/public/warm.html">Warm Tones</a> </li>   
+            <li><a href="/public/cool.html">Cool Tones</a> </li> 
+            <li><a href="/public/gray.html">Gray Tones</a> </li>
+        </ul>
+    </li>
+</ul>
+    `;
+}
+
+export const logoutBtn = document.getElementById("logout");
+if(logoutBtn) logoutBtn.addEventListener('click', logout)
+
+export function logout() {
+  removeCurrentCustomer();
+  window.location.href = "login.html";
+}
+
+
+/*//fix using if statement when have time
+
 const regForm = document.getElementById("regForm");
 try{
     regForm.addEventListener('submit', createCustomer);
@@ -91,6 +200,7 @@ function getLogInfo(e){
 
     console.log(email +" "+ pass);
 }
+*/
 
 
 
