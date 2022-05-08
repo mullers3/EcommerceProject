@@ -7,10 +7,13 @@ const cartRoutes = require ("./server/route/cart");
 const orderRoutes = require ("./server/route/order");
 const productRoutes = require("./server/route/product");
 
-
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/login.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'home.html')))
+
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve(__dirname, '/public', 'home.html'));
+  })
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");  
@@ -23,7 +26,6 @@ app.use("/customer", customerRoutes);
 app.use("/cart", cartRoutes);
 app.use("/order", orderRoutes);
 app.use("/product", productRoutes);
-
 
 const PORT = process.env.PORT || 3000; 
 

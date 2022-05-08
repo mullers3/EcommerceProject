@@ -1,4 +1,4 @@
-import {fetchData, getCurrentCustomer, setCurrentCustomer, removeCurrentCustomer} from "../../main.js";
+import {fetchData, getCurrentCustomer, setCurrentCustomer, removeCurrentCustomer} from "./main.js";
 const loginForm = document.getElementById("logForm");
 if(loginForm) loginForm.addEventListener('submit', login)
 function login(e) {
@@ -30,7 +30,7 @@ function register(e){
     const email = document.getElementById("email").value;
     const pass = document.getElementById("pass").value;
 
-    fetchData('/customers/register', {email:email, password:pass}, "POST")
+    fetchData('/customer/register', {email:email, password:pass}, "POST")
     .then((data) => {
         if(!data.message){
             setCurrentCustomer(data);
@@ -38,7 +38,7 @@ function register(e){
     }
     })
     .catch((error) => {
-        const errtext = error.message;
+        const errText = error.message;
         document.querySelector("#regForm p.error").innerHTML = errText;
         document.getElementById("pass").value =""; 
         console.log(`Error! ${errText}`)

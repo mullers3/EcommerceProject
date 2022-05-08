@@ -119,15 +119,15 @@ const nav = document.querySelector('nav');
 if(getCurrentCustomer()){
     nav.innerHTML =`
     <ul>
-    <li><a href="/public/home.html">Home</a> </li>
+    <li><a href="home.html">Home</a> </li>
     <li><a id="logout">Logout</a> </li>
-    <li><a href="/public/register.html">Register</a> </li>
-    <li><a href="/public/checkout.html">Checkout</a> </li>
+    <li><a href="register.html">Register</a> </li>
+    <li><a href="checkout.html">Checkout</a> </li>
     <li class="dropdown"><a href="#products">Products</a> 
         <ul class="products">
-            <li><a href="/public/warm.html">Warm Tones</a> </li>   
-            <li><a href="/public/cool.html">Cool Tones</a> </li> 
-            <li><a href="/public/gray.html">Gray Tones</a> </li>
+            <li><a href="warm.html">Warm Tones</a> </li>   
+            <li><a href="cool.html">Cool Tones</a> </li> 
+            <li><a href="gray.html">Gray Tones</a> </li>
         </ul>
     </li>
 </ul>
@@ -135,15 +135,15 @@ if(getCurrentCustomer()){
 }else{
     nav.innerHTML = `
     <ul>
-    <li><a href="/public/home.html">Home</a> </li>
-    <li><a href="/public/login.html">Login</a> </li>
-    <li><a href="/public/register.html">Register</a> </li>
-    <li><a href="/public/checkout.html">Checkout</a> </li>
+    <li><a href="home.html">Home</a> </li>
+    <li><a href="login.html">Login</a> </li>
+    <li><a href="register.html">Register</a> </li>
+    <li><a href="checkout.html">Checkout</a> </li>
     <li class="dropdown"><a href="#products">Products</a> 
         <ul class="products">
-            <li><a href="/public/warm.html">Warm Tones</a> </li>   
-            <li><a href="/public/cool.html">Cool Tones</a> </li> 
-            <li><a href="/public/gray.html">Gray Tones</a> </li>
+            <li><a href="warm.html">Warm Tones</a> </li>   
+            <li><a href="cool.html">Cool Tones</a> </li> 
+            <li><a href="gray.html">Gray Tones</a> </li>
         </ul>
     </li>
 </ul>

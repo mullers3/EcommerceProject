@@ -1,3 +1,4 @@
+const con = require ("./db_connect")
 const customers = [{
     customerId: 1,
     email: "cathy123@gmail.com", 
@@ -11,7 +12,26 @@ const customers = [{
 ];
 
 //get all customers 
-let getCustomers = () => customers;
+let getCustomers = async () => {
+    const sql = `SELECT * FROM users`;
+    return await con.query(sql);
+  };
+  
+  async function getCustomer(customer) {
+    let sql;
+    if(customer.customerId) {
+      sql = `SELECT * FROM customers
+        WHERE customer_id = ${customer.customerId}
+      `;
+    } else {
+      sql = `SELECT * FROM customers
+        WHERE email = "${customer.email}"
+      `;
+    }
+    return await con.query(sql);
+  }
+  
+  
 
 function login(email, password){
     const customer = customers.filter((u) => u.email === email);
@@ -20,33 +40,33 @@ function login(email, password){
     return customer[0];
 }
 
-function register(customer){
-    const c = customerExists(customer.email);
-    if(c.length>0) throw Error('Username taken');
-    const newCust = {
-        customerId: customers[customers.length-1].customerId + 1,
-        firstName: customer.firstName,
-        lastName: customer.lastName,
-        email: customer.email,
-        password: customer.pass,
-        birthday: customer.birthday
-    }
+async function register(customer) {
+    const u = customerExists(customer.email);
+    if(u.length>0) throw Error("Email already exists");
+  
+    const sql = `INSERT INTO customers(fname, lname, email, pass, bday)
+      VALUES ("${customer.fname}", "${customer.lname}", "${customer.email}", "${customer.pass}", "${customer.bday}")
+    `;
+  
+    const insert = await con.query(sql);
+    const newCustomer = await getCustomer(customer);
+    return newCustomer[0];
+  }
 
-    customers.push(newCust);
+  async function customerExists(email) {
+    const sql = `SELECT * FROM customers
+      WHERE email = "${email}"
+    `;
+    return await con.query(sql);
+  }
 
-    return newCust;
+async function deleteCustomer(customerId){
+  const sql = `DELETE FROM customers 
+  WHERE customer_id = ${customerId}
+`;
+await con.query(sql);
 }
 
-function customerExists(email){
-    return customers.filter((c) => c.email === email);
-}
+//function editEmail(){}//finish 
 
-function deleteCustomer(customerId){
-    let i = customers.map((customer) => customer.customerId).indexOf(customerId);
-    customers.splice(i,1);
-    console.log(customers);
-}
-
-function editEmail(){}//finish 
-
-module.exports = {getCustomers, login, register, deleteCustomer};
+module.exports = {getCustomers, getCustomer, login, register, deleteCustomer};

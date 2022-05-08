@@ -2,7 +2,7 @@ header h1{
     color: white;
     padding: 2%;
     text-align: center;
-    background-image: url("/public/images/BG2.jpg");
+    background-image: url("/images/BG2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     letter-spacing: .1em;
