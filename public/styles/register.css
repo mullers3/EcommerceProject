@@ -66,6 +66,13 @@ nav ul li ul li{
     main{
         padding-bottom: 10em;
     }
+    .error{
+        text-align: center;
+        color: darkred;
+        font-size: large;
+        text-decoration: underline;
+        text-transform: capitalize;
+    }
 
 /*Form formatting including the flex stuff*/
 

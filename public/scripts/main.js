@@ -150,6 +150,7 @@ if(getCurrentCustomer()){
     `;
 }
 
+
 export const logoutBtn = document.getElementById("logout");
 if(logoutBtn) logoutBtn.addEventListener('click', logout)
 

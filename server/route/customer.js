@@ -43,7 +43,7 @@ router
 
     .put('/edit', async (req, res) => {
         try{
-            const customer = Customer.editProfile(req.body);
+            const customer = Customer.editEmail(req.body);
             res.send({...email, password: undefined});
         }catch(error){
             res.status(401).send({message: error.message});

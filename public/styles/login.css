@@ -92,6 +92,16 @@ main{
     padding-bottom: 23em;
 }
 
+.error{
+    text-align: center;
+    color: darkred;
+    font-size: large;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+
+
 
 /*Footer*/  
 #footer{
@@ -107,3 +117,4 @@ main{
        border: 1px solid rgb(136, 74, 149);
        width: 100%;
    }
+
