@@ -2,13 +2,13 @@ const con = require ("./db_connect")
 
 async function createTable() {
   let sql = `CREATE TABLE IF NOT EXISTS customers (
-    customer_id INT NOT NULL AUTO_INCREMENT,
+    customerId INT NOT NULL AUTO_INCREMENT,
     fname VARCHAR(255) NOT NULL,
     lname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     pass VARCHAR(255),
     bday DATE,
-    CONSTRAINT user_pk PRIMARY KEY(user_id)
+    CONSTRAINT customer_pk PRIMARY KEY(customerId)
   )`;
   await con.query(sql);
 }
@@ -24,7 +24,7 @@ let getCustomers = async () => {
     let sql;
     if(customer.customerId) {
       sql = `SELECT * FROM customers
-        WHERE customer_id = ${customer.customerId}
+        WHERE customerId = ${customer.customerId}
       `;
     } else {
       sql = `SELECT * FROM customers
@@ -69,7 +69,7 @@ async function register(customer) {
 
 async function deleteCustomer(customerId){
   const sql = `DELETE FROM customers 
-  WHERE customer_id = ${customerId}
+  WHERE customerId = ${customerId}
 `;
 await con.query(sql);
 }
@@ -77,7 +77,7 @@ await con.query(sql);
 async function editEmail(customer) {
   const sql = `UPDATE customers SET
     email = "${customer.email}"
-    WHERE customer_id = ${customer.customerId}
+    WHERE customerId = ${customer.customerId}
   `;
   const update = await con.query(sql);
   const newUser = await getUser(customer);

@@ -1,4 +1,4 @@
-import { getCurrentCustomer, setCurrentCustomer, removeCurrentCustomer, logout, fetchData } from "./main";
+import { getCurrentCustomer, setCurrentCustomer, removeCurrentCustomer, logout, fetchData } from "./main.js";
 
 let customer = getCurrentCustomer();
 if(!customer) window.location.href = "login.html"
@@ -8,16 +8,16 @@ account.innerHTML = `
 <h2>Welcome back, ${customer.email}!</h2>
 <div>
   <p class="error"></p>
-  <button class="btn" id="edit">Edit Info</button>
   <button class="btn" id="delete">Delete Account</button>
 </div>
 `;
 
-document.getElementById("edit").addEventListener('click', editAccount);
 document.getElementById("delete").addEventListener('click', deleteAccount);
 function deleteAccount() {
-   /* if(confirm('Are you sure you want to delete your account???')) {
-      fetchData('/customers/delete', {customerId: customerId}, "DELETE")
+  console.log(customer);
+  console.log(customer.customerId);
+    if(confirm('Are you sure you want to delete your account???')) {
+      fetchData('/customer/delete', {customerId: customer.customerId}, "DELETE")
       .then((data) => {
         if(!data.message) {
           console.log(data.success)
@@ -27,12 +27,9 @@ function deleteAccount() {
       })
       .catch((error) => {
         const errText = error.message;
+        document.querySelector("#account div p.error").innerHTML = errText;
         console.log(`Error! ${errText}`)
       })
-    }*/
+    }
     console.log("jghv,gjcg");
-  }
-
-  function editAccount(){
-    console.log("bhejdg");
   }

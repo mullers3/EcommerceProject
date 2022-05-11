@@ -79,11 +79,19 @@ class Product{// does it need a pic variable
 class Cart{
     constructor(id){
         this.cartId = id;
+        //I don't know what else to put here, products???
+    }
+}
+
+class Order{
+    constructor(id, cartId){
+        this.orderId = id;
+        this.cartId = cartId;
     }
 }
 
 export async function fetchData(url = '', data = {}, methodType) {
-    const response = await fetch(`http://localhost:3000${url}`, {
+    const response = await fetch(`${url}`, {
       method: methodType, // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
