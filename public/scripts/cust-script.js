@@ -12,7 +12,7 @@ function login(e) {
     .then((data) => {
         if(!data.message) {
             setCurrentCustomer(data);
-            window.location.href = "home.html"; //don't know about that tho
+            window.location.href = "account.html"; //don't know about that tho
         }
     })
     .catch((error) => {
