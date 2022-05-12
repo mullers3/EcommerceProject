@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <header>
+        <h1>Admin</h1>
+    </header>
+    <nav style="display: none;"></nav>
+    <main>
+        <h2>Add New Product</h2>
+        <form id="addPForm">
+            <p class="error"></p>
+            <p class="works"></p>
+            <div class="row">
+                <div class="colmn">
+                    <div class="formInp">
+                        <label for="productName">Product Name</label>
+                        <br>
+                        <input type="text" id="productName" name="productName">
+                    </div>
+                </div>    
+                <div class="column">
+                    <div class="formInp">
+                        <label for="productDesc">Product Description</label>
+                        <br>
+                        <input type="text" id="productDesc" name="productDesc">
+                    </div>
+                </div>
+            </div>   
+            <div class="row">
+                <div class="colmn">
+                    <div class="formInp">
+                        <label for="category">Product Category</label>
+                        <br>
+                        <input type="text" id="category" name="category">
+                    </div>
+                </div>    
+                <div class="column">
+                    <div class="formInp">
+                        <label for="image">Image Link</label>
+                        <br>
+                        <input type="text" id="image" name="image">
+                    </div>
+                </div>
+            </div>  
+                <div class="colmn">
+                    <div class="formInp">
+                        <label for="category">Product Price</label>
+                        <br>
+                        <input type="text" id="productPrice" name="productPrice">
+                    </div>
+                </div>    
+            <br> 
+            <input type="submit" value="SUBMIT">
+        </form>
+        <br>
+
+        <h2>Delete Product</h2>
+        <form id="deletePForm">
+            <p class="error"></p>
+            <p class="works"></p>
+            <div class="formImp">
+                <label for="productName">Product Name</label>
+                <br>
+                <input type="text" id="badProd" name="badProd">
+            </div>
+            <br>
+            <input type="submit" value="SUBMIT">
+        </form>
+        
+    </main>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/product.js"></script>
+</body>
+</html>

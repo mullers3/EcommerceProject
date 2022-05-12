@@ -102,7 +102,7 @@ main{
 
 /*stuff for account page*/
 
-#account h2{
+h2{
     text-align: center;
     color: rgb(69, 34, 74);
 }

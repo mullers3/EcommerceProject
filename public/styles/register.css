@@ -66,6 +66,12 @@ nav ul li ul li{
     main{
         padding-bottom: 10em;
     }
+
+    h2{
+       color: rgb(69, 34, 74); 
+       text-align: center;  
+    }
+
     .error{
         text-align: center;
         color: darkred;

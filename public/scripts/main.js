@@ -53,27 +53,15 @@ class Customer{
 }
 
 class Product{// does it need a pic variable
-    constructor(id, pName, pPrice){
+    constructor(id, pName, pDesc, pCat, pImage, pPrice){
         this.productId = id;
         this.productName = pName;
+        this.productDesc = pDesc;
+        this.category = pCat;
+        this.image = pImage;
         this.productPrice = pPrice;
     }
 
-    getProductName(){
-    return this.productName;    
-    }
-
-    getProductPrice(){
-        return this.productPrice;
-    }
-
-    setProductName(pName){
-        this.productName = pName;
-    }
-
-    setProductPrice(pPrice){
-        this.productPrice = pPrice;
-    }
 }
 
 class Cart{

@@ -1,27 +1,35 @@
-const products = [
-    {
-        productId: 1,
-        productName: "red",
-        productPrice: 16.99
+const con = require ("./db_connect")
 
-    },
-    {
-        productId: 2,
-        productName: "blue",
-        productPrice: 15.99
-    }
-]
+async function createTable() {
+  let sql = `CREATE TABLE IF NOT EXISTS products (
+    productId INT NOT NULL AUTO_INCREMENT,
+    productName VARCHAR(255) NOT NULL UNIQUE,
+    productDesc VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    productPrice FLOAT(10) NOT NULL,
+    CONSTRAINT product_pk PRIMARY KEY(productId)
+  )`;
+  await con.query(sql);
+}
+createTable();
 
-let getAllProducts = () => products; 
-
-function addProduct(product){
-    const newProd = {
-        productId: products[products.length-1].productId + 1,
-        productName: product.productName,
-        productPrice: product.productPrice
-    }
-    products.push(newProd)
-    return newProd;
+async function addProduct(product){
+    let sql = `INSERT INTO products (productName, productDesc, category, image, productPrice) VALUES
+    ("${product.productName}", "${product.productDesc}", "${product.category}", "${product.image}", "${product.productPrice}")`
+    
+    console.log(sql)
+    return await con.query(sql);
+    
 }
 
-module.exports = {getAllProducts, addProduct}
+async function deleteProduct(productName){
+  const sql = `DELETE FROM products WHERE productName = ${productName}`;
+  await con.query(sql);
+}
+
+
+
+
+
+module.exports = {addProduct, deleteProduct};
