@@ -30,9 +30,7 @@ async function deleteProduct(productName){
 }
 
 async function getProducts(category) {
-  console.log(category);
   const sql = `SELECT * FROM products WHERE category="${category}"`;
-  console.log(sql);
   const products = await con.query(sql);
   return products;
 };

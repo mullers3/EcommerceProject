@@ -74,14 +74,5 @@ async function deleteCustomer(customerId){
 await con.query(sql);
 }
 
-async function editEmail(customer) {
-  const sql = `UPDATE customers SET
-    email = "${customer.email}"
-    WHERE customerId = ${customer.customerId}
-  `;
-  const update = await con.query(sql);
-  const newUser = await getUser(customer);
-  return newUser[0];
-}
 
-module.exports = {getCustomers, getCustomer, login, register, deleteCustomer, editEmail};
+module.exports = {getCustomers, getCustomer, login, register, deleteCustomer};
