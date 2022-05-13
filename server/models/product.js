@@ -8,7 +8,7 @@ async function createTable() {
     productDesc VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
     image VARCHAR(255) NOT NULL,
-    productPrice FLOAT(10) NOT NULL,
+    productPrice FLOAT(4,2) NOT NULL,
     CONSTRAINT product_pk PRIMARY KEY(productId)
   )`;
   await con.query(sql);
@@ -30,8 +30,11 @@ async function deleteProduct(productName){
 }
 
 async function getProducts(category) {
-  const sql = `SELECT * FROM products WHERE category=${category}`;
-  return await con.query(sql)
+  console.log(category);
+  const sql = `SELECT * FROM products WHERE category="${category}"`;
+  console.log(sql);
+  const products = await con.query(sql);
+  return products;
 };
 
 

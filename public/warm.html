@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warm Tone Products</title>
     <link rel="stylesheet" href="styles/warm.css">
+    <script type="module">
+        import {getProducts} from './scripts/product.js';
+        window.addEventListener('DOMContentLoaded', getProducts('warm'));
+    </script>
 </head>
 <body>
     <header>
@@ -19,6 +23,7 @@
 
     <main>
         <section id ="container">
+            <!--
             <div class="warm-product">
                 <img src="/images/manic_panic_VR.jpg" alt="Manic Panic Vampire Red">
                 <p>
@@ -63,6 +68,7 @@
                     <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
                 </p>
             </div>
+        -->
         </section>
     </main>
 

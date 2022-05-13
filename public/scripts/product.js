@@ -47,5 +47,33 @@ function deleteProduct(e){
     }
 }
 
+export function getProducts(category){
+     fetchData('/product/getProducts', {category: category}, "POST")
+    .then((data) => {
+        if(!data.message){
+            let myCont = document.getElementById("container");
+            let output = "";
+            for(let i=0; i < data.length; i++){
+                output += ` <div class="${category}-product">
+                <img src="${data[i].image}" alt="${data[i].productName}">
+                <p>
+                    ${data[i].productName}
+                    <br>
+                    Price: $${data[i].productPrice} 
+                    <br>
+                    Description: ${data[i].productDesc}
+                    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
+                </p>
+            </div>`
+            }
+            myCont.innerHTML = output
+        }
+    })
+    .catch((error) => {
+        const errText = error.message;
+        console.log(`Error! ${errText}`)
+    });
+}
+
 
 

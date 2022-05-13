@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gray Tone Products</title>
     <link rel="stylesheet" href="styles/gray.css">
+    <script type="module">
+        import {getProducts} from './scripts/product.js';
+        window.addEventListener('DOMContentLoaded', getProducts('gray'));
+    </script>
 </head>
 <body>
     <header>
@@ -18,6 +22,7 @@
 
     <main>
         <section id ="container">
+            <!--
             <div class="gray-product">
                 <img src="/images/arctic_fox_Ster.png" alt="Arctic Fox Sterling">
                 <p>
@@ -50,7 +55,7 @@
                     Description: gray but actually blue
                     <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
                 </p>
-            </div>
+            </div> -->
         </section>
     </main>
 

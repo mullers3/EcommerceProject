@@ -65,9 +65,10 @@ class Product{// does it need a pic variable
 }
 
 class Cart{
-    constructor(id){
+    constructor(id, customerId, products){
         this.cartId = id;
-        //I don't know what else to put here, products???
+        this.customerId = customerId;
+        this.cartProducts = products;
     }
 }
 
@@ -92,6 +93,7 @@ export async function fetchData(url = '', data = {}, methodType) {
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
+    console.log(data);
     if(response.ok) {
       return await response.json(); // parses JSON response into native JavaScript objects
     } else {
@@ -155,43 +157,7 @@ export function logout() {
   window.location.href = "login.html";
 }
 
-window.onload = function(){
-    document.getElementById("container").innerHTML = `
-    <div class="cool-product">
-    <img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
-    <p>
-        Arctic Fox Purple Rain
-        <br>
-        Price: $14.99 
-        <br>
-        Description: A purple dye for a rainy day
-        <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
-    </p>
-</div>
-<div class="cool-product">
-<img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
-<p>
-    Arctic Fox Purple Rain
-    <br>
-    Price: $14.99 
-    <br>
-    Description: A purple dye for a rainy day
-    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
-</p>
-</div>
-<div class="cool-product">
-<img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
-<p>
-    Arctic Fox Purple Rain
-    <br>
-    Price: $14.99 
-    <br>
-    Description: A purple dye for a rainy day
-    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
-</p>
-</div>
-`;
-}
+
 /*//fix using if statement when have time
 
 const regForm = document.getElementById("regForm");

@@ -22,9 +22,9 @@ router
         }
     })
 
-    .get('/', async(req, res) => {
+    .post('/getProducts', async(req, res) => {
         try{
-            const products = await Product.getProducts();
+            const products = await Product.getProducts(req.body.category);
             res.send(products);
         }catch(error){
             res.status(401).send({message: error.message})
