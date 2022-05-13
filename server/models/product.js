@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const con = require ("./db_connect")
 
 async function createTable() {
@@ -24,12 +25,18 @@ async function addProduct(product){
 }
 
 async function deleteProduct(productName){
-  const sql = `DELETE FROM products WHERE productName = ${productName}`;
+  const sql = `DELETE FROM products WHERE productName = "${productName}"`;
   await con.query(sql);
 }
 
+async function getProducts(category) {
+  const sql = `SELECT * FROM products WHERE category=${category}`;
+  return await con.query(sql)
+};
 
 
 
 
-module.exports = {addProduct, deleteProduct};
+
+
+module.exports = {addProduct, deleteProduct, getProducts};

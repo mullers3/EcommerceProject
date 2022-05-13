@@ -122,7 +122,7 @@ if(getCurrentCustomer()){
     <li class="dropdown"><a href="#products">Products</a> 
         <ul class="products">
             <li><a href="warm.html">Warm Tones</a> </li>   
-            <li><a href="cool.html">Cool Tones</a> </li> 
+            <li><a id="coolPage" href="cool.html">Cool Tones</a> </li> 
             <li><a href="gray.html">Gray Tones</a> </li>
         </ul>
     </li>
@@ -138,7 +138,7 @@ if(getCurrentCustomer()){
     <li class="dropdown"><a href="#products">Products</a> 
         <ul class="products">
             <li><a href="warm.html">Warm Tones</a> </li>   
-            <li><a href="cool.html">Cool Tones</a> </li> 
+            <li><a id="coolPage" href="cool.html">Cool Tones</a> </li> 
             <li><a href="gray.html">Gray Tones</a> </li>
         </ul>
     </li>
@@ -155,7 +155,43 @@ export function logout() {
   window.location.href = "login.html";
 }
 
-
+window.onload = function(){
+    document.getElementById("container").innerHTML = `
+    <div class="cool-product">
+    <img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
+    <p>
+        Arctic Fox Purple Rain
+        <br>
+        Price: $14.99 
+        <br>
+        Description: A purple dye for a rainy day
+        <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
+    </p>
+</div>
+<div class="cool-product">
+<img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
+<p>
+    Arctic Fox Purple Rain
+    <br>
+    Price: $14.99 
+    <br>
+    Description: A purple dye for a rainy day
+    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
+</p>
+</div>
+<div class="cool-product">
+<img src="/images/arctic_fox_PR.png" alt="Arctic Fox Purple Rain">
+<p>
+    Arctic Fox Purple Rain
+    <br>
+    Price: $14.99 
+    <br>
+    Description: A purple dye for a rainy day
+    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
+</p>
+</div>
+`;
+}
 /*//fix using if statement when have time
 
 const regForm = document.getElementById("regForm");

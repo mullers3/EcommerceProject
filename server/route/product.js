@@ -22,6 +22,15 @@ router
         }
     })
 
+    .get('/', async(req, res) => {
+        try{
+            const products = await Product.getProducts();
+            res.send(products);
+        }catch(error){
+            res.status(401).send({message: error.message})
+        }
+    })
+
 
 
 module.exports = router;

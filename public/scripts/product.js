@@ -30,13 +30,14 @@ function addProduct(e){
 const deletePForm = document.getElementById("deletePForm");
 if(deletePForm) deletePForm.addEventListener('submit', deleteProduct)
 
-function deleteProduct(){
-    productName = document.getElementById("badProd");
+function deleteProduct(e){
+    e.preventDefault();
+    let productName = document.getElementById("badProd").value;
     if(confirm('Do you want to delete ' + productName + ' ?')){
         fetchData('/product/delete', {productName : productName}, "DELETE")
         .then((data) => {
             if(!data.message){
-                document.querySelector("deletePForm p.works").innerHTML = data.success;
+                document.querySelector("#deletePForm p.works").innerHTML = data.success;
             }
         })
         .catch((error) => {
@@ -45,3 +46,6 @@ function deleteProduct(){
         })
     }
 }
+
+
+
