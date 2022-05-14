@@ -56,17 +56,17 @@ export function getProducts(category){
             for(let i=0; i < data.length; i++){
                 output += ` <div class="${category}-product">
                 <img src="${data[i].image}" alt="${data[i].productName}">
-                <p>
+                <p id="info">
                     ${data[i].productName}
                     <br>
                     Price: $${data[i].productPrice} 
                     <br>
                     Description: ${data[i].productDesc}
-                    <button class="addToCart" onclick="addToCart(this)">Add to Cart</button>
+                    <button class="addToCart" id="${data[i].productName}" onclick="getClickID()">Add To Cart</button>
                 </p>
             </div>`
             }
-            myCont.innerHTML = output
+            myCont.innerHTML = output 
         }
     })
     .catch((error) => {
@@ -74,6 +74,7 @@ export function getProducts(category){
         console.log(`Error! ${errText}`)
     });
 }
+
 
 
 

@@ -131,7 +131,7 @@ display: flex;
 flex-direction: column;
 width: 26.2em;
 box-shadow: 0 0 .2em rgb(102, 51, 153);
-margin: 2.2em auto;
+margin: 2em auto;
 padding: 4%;
 }
 
@@ -141,15 +141,21 @@ padding: 4%;
 }
 
 .cart-product{
-    width: 20em;
     height: 20%;
     display: block;
-    margin: 2em 3em auto;
+    margin: 1em auto;
+    text-align: center;
     
 }
 
 .cart-product img{
     width: 4em;
+    display: block;
+    margin: auto;
+}
+
+#total{
+    text-align: center;
 }
 
 /*Footer*/  

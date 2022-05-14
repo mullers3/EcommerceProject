@@ -10,6 +10,28 @@
         import {getProducts} from './scripts/product.js';
         window.addEventListener('DOMContentLoaded', getProducts('gray'));
     </script>
+    <script type="text/javascript">
+        function getClickID() {
+        productName = event.target.id;
+        var cartValue=sessionStorage.getItem("cart");
+        if(cartValue) {
+            var cartObj = JSON.parse(cartValue);
+            if(cartObj[productName]){
+                cartObj[productName] += 1;
+            } else{
+                cartObj[productName] = 1;
+            }
+            console.log(cartObj);
+            var jsonStr = JSON.stringify(cartObj);
+            sessionStorage.setItem("cart", jsonStr);
+        }else{
+            var cart = {[productName]: 1};
+            var jsonStr = JSON.stringify(cart);
+            sessionStorage.setItem("cart", jsonStr);
+            console.log(cart);
+        }
+    }
+        </script>  
 </head>
 <body>
     <header>
