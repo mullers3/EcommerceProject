@@ -12,17 +12,14 @@ async function createTable() {
   }
   createTable();
 
-async function addToCart(){
-    console.log("in add to cart");
+async function getCartProd(productName){
+  console.log(productName);
+  const sql = `SELECT * FROM products WHERE productName="${productName}"`
+  console.log(sql);
+  const cartProd = await con.query(sql);
+  return cartProd;
 }
 
-async function addCartToDb(cart){
-    let customer = getCurrentCustomer();
-    let sql = `INSERT INTO carts (customerId, productIds) VALUES("${customer.customerId}", "${cart}")` 
-    console.log(sql);
-    return await con.query(sql);
-}
-
-module.exports = {addToCart, addCartToDb};
+module.exports = {getCartProd};
 
   

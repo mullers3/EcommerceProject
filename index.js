@@ -14,7 +14,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'home.ht
 //app.get('/', (req, res) => res.sendFile('home.html'))
 
 app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '/public', 'home.html'));
+    res.sendFile(path.join(__dirname, '/public', 'home.html'));
   })
 
 app.use(function(req, res, next) {

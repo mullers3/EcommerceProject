@@ -158,6 +158,20 @@ padding: 4%;
     text-align: center;
 }
 
+#cartForm input[type="number"]{
+    width: 2.5em;
+}
+
+#cartForm .cartBtn{
+    color: whitesmoke;
+    background-color: rgb(102, 51, 153);
+    border-radius: .4em;
+    padding: .2em;
+    margin-top: 1.2em;
+    margin-left: auto;
+
+}
+
 /*Footer*/  
 #footer{
     position: relative;

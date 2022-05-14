@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles/checkout.css">
+   <script type="module">
+        import {showCart} from './scripts/cart-script.js';
+        window.addEventListener('DOMContentLoaded', showCart());
+    </script>
+
+    <script type="text/javascript">
+        function buttonPressed(what){
+            switch(what) {
+                case "checkout":
+                    window.location.href = 'checkout.html';
+                    break;
+                case "empty":
+                    sessionStorage.clear("cart");
+                    alert("cart was emptied");
+                    window.location.href = 'home.html';
+                    break;
+                case "update":
+                    let cartValue=sessionStorage.getItem("cart");
+                    let cartObj = JSON.parse(cartValue);
+                    for(let x in cartObj){ 
+                        console.log("x = " + x);
+                        console.log(document.getElementById(x));
+                        console.log("Value of By Id x " + document.getElementById(x).value);
+                        if(document.getElementById(x).value > 0){
+                            console.log("greater than 0");
+                            cartObj[x] = parseInt(document.getElementById(x).value);
+                        }else{
+                            console.log("this is 0");
+                            delete cartObj[document.getElementById(x).name];
+                        }
+                    }
+                    var jsonStr = JSON.stringify(cartObj);
+                    sessionStorage.setItem("cart", jsonStr);
+                    window.location.href = 'cart.html';
+        }
+    }
+    </script> 
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <nav>
+    
+    </nav>
+
+    <main>
+        <form id="cartForm">
+            
+        </form>
+        
+        </main>
+
+        <footer id="footer">
+            <hr class="footerHR">
+            <h5>TotallyRealWebsite &copy; </h5>
+        </footer>
+        <script type="module" src="scripts/main.js"></script>
+        <script type="module" src="scripts/cart-script.js"></script>
+    </body>
+    </html>

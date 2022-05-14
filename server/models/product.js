@@ -33,7 +33,7 @@ async function getProducts(category) {
   const sql = `SELECT * FROM products WHERE category="${category}"`;
   const products = await con.query(sql);
   return products;
-};
+}
 
 
 
