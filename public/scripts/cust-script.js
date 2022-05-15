@@ -7,7 +7,6 @@ function login(e) {
 
     const email = document.getElementById("email").value;//what do you mean undefined
     const pass = document.getElementById("pass").value;
-    console.log(email, pass);
     fetchData('/customer/login', {email: email, password: pass}, "POST")// not finding login??
     .then((data) => {
         if(!data.message) {

@@ -4,8 +4,7 @@ const con = require ("./db_connect")
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS carts (
       cartId INT NOT NULL AUTO_INCREMENT,
-      customerId INT NOT NULL,
-      productIds JSON NOT NULL,
+      products JSON NOT NULL,
       CONSTRAINT cart_pk PRIMARY KEY(cartId)
     )`;
     await con.query(sql);
@@ -13,13 +12,24 @@ async function createTable() {
   createTable();
 
 async function getCartProd(productName){
-  console.log(productName);
   const sql = `SELECT * FROM products WHERE productName="${productName}"`
-  console.log(sql);
   const cartProd = await con.query(sql);
   return cartProd;
 }
 
-module.exports = {getCartProd};
+async function addCartToDB(cart){
+  let products = cart["products"];
+  let sql = `INSERT INTO carts (products) VALUES('${products}')`; 
+  return await con.query(sql);
+}
+
+async function getCartFromDB(cartId){
+  
+  let sql = `SELECT * FROM carts WHERE cartId="${cartId}"`;
+  console.log(sql);
+  return await con.query(sql);
+}
+
+module.exports = {getCartProd, addCartToDB, getCartFromDB};
 
   

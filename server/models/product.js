@@ -18,8 +18,6 @@ createTable();
 async function addProduct(product){
     let sql = `INSERT INTO products (productName, productDesc, category, image, productPrice) VALUES
     ("${product.productName}", "${product.productDesc}", "${product.category}", "${product.image}", "${product.productPrice}")`
-    
-    console.log(sql)
     return await con.query(sql);
     
 }

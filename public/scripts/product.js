@@ -6,7 +6,6 @@ if(addPForm) addPForm.addEventListener('submit', addProduct)
 
 function addProduct(e){
     e.preventDefault();
-    console.log("heeelllllllloooooo")
 
     const productName = document.getElementById("productName").value;
     const productDesc = document.getElementById("productDesc").value;

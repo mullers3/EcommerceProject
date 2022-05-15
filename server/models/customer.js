@@ -46,14 +46,11 @@ let getCustomers = async () => {
   }
 
 async function register(customer) {
-  console.log(customer);
     const u = await customerExists(customer.email);
     if(u.length>0) throw Error("Email already exists");
-  console.log(customer.pass)
     const sql = `INSERT INTO customers(fname, lname, email, pass, bday)
       VALUES ("${customer.fname}", "${customer.lname}", "${customer.email}", "${customer.pass}", "${customer.bday}")
     `;
-    console.log(sql);
   
     const insert = await con.query(sql);
     const newCustomer = await getCustomer(customer);

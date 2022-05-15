@@ -15,7 +15,7 @@
         function buttonPressed(what){
             switch(what) {
                 case "checkout":
-                    window.location.href = 'checkout.html';
+                    window.location.href = 'loading.html';
                     break;
                 case "empty":
                     sessionStorage.clear("cart");
@@ -26,14 +26,9 @@
                     let cartValue=sessionStorage.getItem("cart");
                     let cartObj = JSON.parse(cartValue);
                     for(let x in cartObj){ 
-                        console.log("x = " + x);
-                        console.log(document.getElementById(x));
-                        console.log("Value of By Id x " + document.getElementById(x).value);
                         if(document.getElementById(x).value > 0){
-                            console.log("greater than 0");
                             cartObj[x] = parseInt(document.getElementById(x).value);
                         }else{
-                            console.log("this is 0");
                             delete cartObj[document.getElementById(x).name];
                         }
                     }

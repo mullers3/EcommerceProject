@@ -2,9 +2,7 @@ import { fetchData } from "./main.js";
 
 export function showCart(){
     var cartValue=sessionStorage.getItem("cart");
-    console.log(cartValue);
     let cartObj = JSON.parse(cartValue);
-    console.log(cartObj);
     let myCart = document.getElementById("cartForm");
     let output = `<h3>Cart</h3>`;
     let total = 0.00;
@@ -12,8 +10,6 @@ export function showCart(){
         fetchData('/cart/getCartProd', {productName : x}, "POST")
         .then((data) => {
             if(!data.message){
-                console.log(data);
-                console.log(cartObj[x]);
                 total += parseFloat(data[0].productPrice) * parseInt(cartObj[x]);
                     output += `<div class="cart-product">
                     <img src="${data[0].image}" alt="${data[0].productName}">
@@ -33,6 +29,35 @@ export function showCart(){
             `;
         })
     }
+}
+export function addCartToDB(){
+    let cartValue=sessionStorage.getItem("cart");
+    fetchData('/cart/addCartToDB', {products : cartValue}, "POST")
+    .then((data) =>{
+        sessionStorage.setItem("cartId", data.insertId);
+        if(!data.message){
+            console.log("added to DB");
+        }
+    })
+    .catch((error) => {
+        console.log(error.message);
+    })
+
+}
+
+export function getCartFromDB(){
+    let cartId = sessionStorage.getItem("cartId");
+    console.log(cartId);
+    fetchData('/cart/getCartFromDB', {cartId : cartId}, "POST")
+    .then((data) =>{
+        if(!data.message){
+            console.log("retreived from DB");
+            console.log(data);
+        }
+    })
+    .catch((error) => {
+        console.log(error.message);
+    })
 }
 
 

@@ -16,7 +16,6 @@ router
     .post('/login', async (req, res) => {
         try{
             const customer = await Customer.login(req.body.email, req.body.password);
-            console.log(customer);
             res.send({...customer, password:undefined});
         } catch(error){
             res.status(401).send({message: error.message});

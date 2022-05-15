@@ -21,14 +21,12 @@
             } else{
                 cartObj[productName] = 1;
             }
-            console.log(cartObj);
             var jsonStr = JSON.stringify(cartObj);
             sessionStorage.setItem("cart", jsonStr);
         }else{
             var cart = {[productName]: 1};
             var jsonStr = JSON.stringify(cart);
             sessionStorage.setItem("cart", jsonStr);
-            console.log(cart);
         }
     }
         </script>

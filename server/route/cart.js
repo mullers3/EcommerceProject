@@ -12,5 +12,23 @@ router
         }
     })
 
+    .post('/addCartToDB', async(req, res) => {
+        try{
+            const cart = await Cart.addCartToDB(req.body);
+            res.send(cart);
+        }catch(error){
+            res.status(401).send({message: error.message});
+        }
+    })
+
+    .post('/getCartFromDB', async(req, res) => {
+        try{
+            const cart = await Cart.getCartFromDB(req.body.cartId);
+            res.send(cart);
+        }catch(error){
+            res.status(401).send({message: error.message});
+        }
+    })
+
 
 module.exports = router;
