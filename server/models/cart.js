@@ -19,16 +19,13 @@ async function getCartProd(productName){
 
 async function addCartToDB(cart){
   let products = cart["products"];
-  console.log(products);
   let sql = `INSERT INTO carts (products) VALUES('${products}')`; 
-  console.log(sql);
   return await con.query(sql);
 }
 
 async function getCartFromDB(cartId){
   
   let sql = `SELECT * FROM carts WHERE cartId="${cartId}"`;
-  console.log(sql);
   return await con.query(sql);
 }
 

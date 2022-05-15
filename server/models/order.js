@@ -21,15 +21,10 @@ async function createTable() {
 createTable();
 
 async function checkout(order){
-    console.log("gets to order model");
-    console.log(order);
     let orderCart = order["cart"]
-    console.log(orderCart);
-    console.log("in model/ordeer.js");
     const sql = `INSERT INTO orders(fname, lname, email, cnumber, cvv, baddress, saddress,zip, cart, total)
     VALUES("${order.fname}","${order.lname}", "${order.email}","${order.cnumber}","${order.cvv}",
     "${order.baddress}", "${order.saddress}", "${order.zip}",'${orderCart}',"${order.total}")`;
-    console.log(sql);
     return await con.query(sql);
 }
 

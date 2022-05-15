@@ -37,7 +37,6 @@ let getCustomers = async () => {
   
 
   async function login(email, password) {
-    console.log("i'm here")//not getting here
     const customer = await customerExists(email);
     if(!customer[0]) throw Error('Customer not found')
     if(customer[0].pass !== password) throw Error("Password is incorrect");

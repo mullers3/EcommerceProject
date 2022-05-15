@@ -52,12 +52,10 @@ export function addCartToDB(){
 
 export function getCartFromDB(){
     let cartId = sessionStorage.getItem("cartId");
-    console.log(cartId);
     fetchData('/cart/getCartFromDB', {cartId : cartId}, "POST")
     .then((data) =>{
         if(!data.message){
             console.log("retreived from DB");
-            console.log(data);
         }
     })
     .catch((error) => {
