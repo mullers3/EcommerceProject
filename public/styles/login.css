@@ -83,6 +83,17 @@ input[type="submit"]{
     margin-left: auto;
 }
 
+button{
+    width: 12em;
+    height: 6em;
+    color: whitesmoke;
+    background-color: rgb(136, 74, 149);
+    border-radius: .4em;
+    padding: .2em;
+    display: block;
+    margin: 2em auto;
+}
+
 .formInp{
     padding: .7em;
     margin: auto;

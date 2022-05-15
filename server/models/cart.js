@@ -19,7 +19,9 @@ async function getCartProd(productName){
 
 async function addCartToDB(cart){
   let products = cart["products"];
+  console.log(products);
   let sql = `INSERT INTO carts (products) VALUES('${products}')`; 
+  console.log(sql);
   return await con.query(sql);
 }
 

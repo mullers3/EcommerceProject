@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="styles/checkout.css">
    <script type="module">
         import {showCart} from './scripts/cart-script.js';
-        window.addEventListener('DOMContentLoaded', showCart());
+        window.addEventListener('DOMContentLoaded', showCart("cartForm"));
     </script>
 
     <script type="text/javascript">
         function buttonPressed(what){
             switch(what) {
                 case "checkout":
-                    window.location.href = 'loading.html';
+                    window.location.href = 'checkout.html';
                     break;
                 case "empty":
                     sessionStorage.clear("cart");

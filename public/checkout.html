@@ -7,6 +7,10 @@
     <title>Checkout</title>
     <link rel="stylesheet" href="styles/checkout.css">
 </head>
+<script type="module">
+    import {showCart, addCartToDB} from './scripts/cart-script.js'
+    window.addEventListener('DOMContentLoaded', showCart("cart"), addCartToDB());
+</script>
 <body>
     <header>
         <h1>Checkout Page</h1>
@@ -18,53 +22,8 @@
 
     <main>
         <div id="page-container"> <!-- this does not look good when it gets small, fix if have time-->
-        <div id="cart">
-            <h3>Cart</h3>
-            <div class="cart-product">
-                <img src="/images/manic_panic_VR.jpg" alt="Manic Panic Vampire Red">
-                <p>
-                    Manic Panic Vampire Red
-                    <br>
-                    Price: $11.99 
-                    <br>
-                    Quantity: 1
-                </p>
-            </div>
-            <div class="cart-product">
-                <img src="/images/arctic_fox_Tran.png" alt="Arctic Fox Transylvania">
-                <p>
-                    Arctic Fox Transylvania
-                    <br>
-                    Price: $14.99 
-                    <br>
-                    Quantity: 1
-                </p>
-            </div>
-            <div class="cart-product">
-                <img src="/images/arctic_fox_Tran.png" alt="Arctic Fox Transylvania">
-                <p>
-                    Arctic Fox Transylvania
-                    <br>
-                    Price: $14.99 
-                    <br>
-                    Quantity: 1
-                </p>
-            </div>
-            <div class="cart-product">
-                <img src="/images/arctic_fox_Tran.png" alt="Arctic Fox Transylvania">
-                <p>
-                    Arctic Fox Transylvania
-                    <br>
-                    Price: $14.99 
-                    <br>
-                    Quantity: 1
-                </p>
-            </div>
-            <div id="total">
-                <p>Your Total Amount is: $44.97</p>
-            </div>
-        </div>
-        <form action="to-my-server" method="POST">
+        <div id="cart"></div>
+        <form id="checkoutForm">
             <h3>Payment  Information</h3>
         <section class="container">
             <div class="row">
@@ -85,26 +44,34 @@
             </div>
             <br>
             <div class="row">
-                <div class="colmn">
+                <div class="column">
+                    <div class="payment-frm">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div> 
+                <div class="column">
                     <div class="payment-frm">
                         <label for="cnumber">Credit Card Number</label>
                         <br>
                         <input type="text" id="cnumber" name="cnumber">
                     </div>
-                </div>    
-                <div class="column">
-                    <div class="payment-frm">
-                        <label for="cvv">CVV Code</label>
-                        <br>
-                        <input type="text" id="cvv" name="cvv">
-                    </div>
+                </div>       
+                
+            </div> 
+            <div class="column">
+                <div class="payment-frm">
+                    <label for="cvv">CVV Code</label>
+                    <br>
+                    <input type="text" id="cvv" name="cvv">
                 </div>
-            </div>    
+            </div>   
             <br>
             <h3>Shipping Information</h3>
             <br>
             <div class="row">
-                <div class="colmn">
+                <div class="column">
                     <div class="payment-frm">
                         <label for="baddress">Billing Address</label>
                         <br>
@@ -138,5 +105,7 @@
         <h5>TotallyRealWebsite &copy; </h5>
     </footer>
     <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/cart-script.js"></script>
+    <script type="module" src="scripts/checkout-script.js"></script>
 </body>
 </html>
