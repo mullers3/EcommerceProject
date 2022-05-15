@@ -14,8 +14,6 @@ account.innerHTML = `
 
 document.getElementById("delete").addEventListener('click', deleteAccount);
 function deleteAccount() {
-  console.log(customer);
-  console.log(customer.customerId);
     if(confirm('Are you sure you want to delete your account???')) {
       fetchData('/customer/delete', {customerId: customer.customerId}, "DELETE")
       .then((data) => {
@@ -31,5 +29,4 @@ function deleteAccount() {
         console.log(`Error! ${errText}`)
       })
     }
-    console.log("jghv,gjcg");
   }
