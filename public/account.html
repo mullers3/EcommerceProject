@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/login.css">
+     <script type="text/javascript">
+         function setId(link){
+            sessionStorage.setItem("orderId", link)
+         }
+    </script>
 </head>
 <body>
     <header>
@@ -14,7 +19,8 @@
     <nav></nav>
     <main>
         <section id="account"></section>
-        <button type="button" class="cartBtn" id="checkout" onclick='getCustOrders()'>Orders</button>
+        <button type="button" id="orders">Orders</button>
+        <p id="orderRefs"></p>
     </main>
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/account.js"></script>

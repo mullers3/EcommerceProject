@@ -1,0 +1,30 @@
+header h1{
+    color: white;
+    padding: 2%;
+    text-align: center;
+    background-image: url("/images/BG2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    letter-spacing: .1em;
+    font-weight: 200;
+}
+
+body{
+    color:rgb(136, 74, 149);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
+table{
+    border-collapse: collapse;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+td{
+    width: 25%;
+    border: 2px solid rgb(69, 34, 74);
+    padding: 2em;
+}

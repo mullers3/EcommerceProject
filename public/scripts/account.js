@@ -30,3 +30,20 @@ function deleteAccount() {
       })
     }
   }
+
+document.getElementById("orders").addEventListener('click', getCustOrders);
+function getCustOrders(){
+  fetchData('/order/getCustOrders', {email: customer.email}, "POST")
+  .then((data) =>{
+    console.log(data);
+    let output = `<h2>Orders</h2>`;
+    for(let i=0; i<data.length; i++){
+      let title =data[i].orderId;
+      output += `<a href="output.html" onclick="setId('${title}')">"Order Number: ${title}"</a> <br> <br>`;
+    }
+    document.getElementById("orderRefs").innerHTML = output;
+  })
+  .catch((error)=>{
+    console.log(error.message);
+  })
+}

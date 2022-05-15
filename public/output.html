@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading</title>
+    <link rel="stylesheet" href="styles/output.css">
+    <script type="module">
+        import {getOrder} from './scripts/checkout-script.js';
+        window.addEventListener('DOMContentLoaded', getOrder());
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="head">Order</h1>
+    </header>
+    <nav style="display: none;"></nav>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td id="name"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td id="email"></td>
+        </tr>
+        <tr>
+            <td>Shipping Adress</td>
+            <td id="saddress"></td>
+        </tr>
+        <tr>
+            <td>Items Bought</td>
+            <td id="cart"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td id="total"></td>
+        </tr>
+    </table>
+</body>
+</html>

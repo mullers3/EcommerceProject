@@ -62,6 +62,10 @@ body{
     letter-spacing: 2px;
 }
 
+#orderRefs{
+    text-align: center;
+}
+
 form{
     width: max-content;
     box-shadow: 0 0 .2em rgb(136, 74, 149);

@@ -1,6 +1,6 @@
 import { fetchData } from "./main.js";
 const checkoutForm = document.getElementById("checkoutForm");
-checkoutForm.addEventListener('submit', checkout);
+if(checkoutForm) checkoutForm.addEventListener('submit', checkout);
 
 function checkout(e){
     e.preventDefault();
@@ -20,13 +20,31 @@ function checkout(e){
     .then((data) => {
         if(!data.message){
             sessionStorage.removeItem("cart");
-            sessionStorage.setItem("cartId", data.insertId);
-            window.location.href = "home.html"
+            sessionStorage.setItem("orderId", data.insertId);
+            window.location.href = "output.html"
         }
     })
     .catch((error) => {
         //window.location.href = "cart.html"
         console.log(error.message);
     })
+}
+
+export function getOrder(){
+    let id = sessionStorage.getItem("orderId");
+    fetchData('/order/getOrder', {orderId:id}, "POST")
+    .then((data) =>{
+        if(!data.message){
+            document.getElementById("head").innerHTML = `Order Number is ${id}`
+            document.getElementById("name").innerHTML = `${data[0].fname} ${data[0].lname}`
+            document.getElementById("email").innerHTML = `${data[0].email}`
+            document.getElementById("saddress").innerHTML = `${data[0].saddress}`
+            let cart = JSON.stringify(data[0].cart)
+            document.getElementById("cart").innerHTML = `${cart}`
+            document.getElementById("total").innerHTML = `$${data[0].total}`
+            
+        }
+    })
+
 }
 

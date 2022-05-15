@@ -13,7 +13,7 @@ async function createTable() {
         saddress VARCHAR(255) NOT NULL,
         zip VARCHAR(255) NOT NULL,
         cart JSON NOT NULL,
-        total FLOAT(4,2) NOT NULL,
+        total FLOAT(16,2) NOT NULL,
         CONSTRAINT order_pk PRIMARY KEY(orderId)
       )`;
       await con.query(sql);
@@ -33,13 +33,10 @@ async function checkout(order){
     return await con.query(sql);
 }
 
-/*async function getCustOrders(){
-    let customer = getCurrentCustomer();
-    const sql = `SELECT * FROM orders WHERE customerID = "${customer.customerId}"`;
-    //now I need to get and display the orders
+async function getCustOrders(email){
+    const sql = `SELECT orderId FROM orders WHERE email = "${email}"`;
     let orders = await con.query(sql);
     return orders;
-    //how TF do i display these, should I send it to a <p> tag???
 }
 //maybe in admin have this to see how many orders on each day????
 async function getOrderByDate(date){
@@ -47,6 +44,12 @@ async function getOrderByDate(date){
     let orders = await con.query(sql);
     return orders;
     //again how to I display thiiiiiiiiiiiis
-}*/
+}
 
-module.exports = {checkout};
+async function getOrder(orderId){
+    const sql = `SELECT * FROM orders WHERE orderId = "${orderId}"`;
+    let order = await con.query(sql);
+    return order;
+}
+
+module.exports = {checkout, getCustOrders, getOrder};
