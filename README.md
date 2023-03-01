@@ -1,6 +1,6 @@
 # Project: "Insert Store Name Here" the Ecommerce Site 
 
-## Link to Site 
+## Link to Site (currently broken)
 [Heroku Link](https://hairdyestore.herokuapp.com/)
 
 ## Project Description
